@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нэрийн хуудас | Миний гэр бүлийн түүх</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Дээд цэс -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                ❀ Миний гэр бүлийн түүх
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Нүүр</a>
+                <a href="tree.html">Удмын мод</a>
+                <a href="history.html">Гэр бүлийн түүх</a>
+                <a href="card.html" class="active">Нэрийн хуудас</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="card-page">
+
+        <!-- Гарчиг -->
+        <section class="card-intro">
+            <p class="subtitle">МИНИЙ ТАНИЛЦУУЛГА</p>
+            <h1>Миний нэрийн хуудас</h1>
+            <p>
+                Миний хувийн мэдээлэл болон гэр бүлийн
+                түүхтэй танилцах боломж.
+            </p>
+        </section>
+
+        <!-- Нэрийн хуудас -->
+        <section class="business-card-section">
+
+            <p class="card-instruction">
+                Нэрийн хуудсан дээр дарж эргүүлээрэй ✨
+            </p>
+
+            <div class="card-container">
+
+                <div class="business-card" id="businessCard">
+
+                    <!-- Нүүр тал -->
+                    <div class="card-face card-front">
+
+                        <div class="card-decoration">❀</div>
+
+                        <div class="card-front-content">
+                            <p class="card-small-title">
+                                PERSONAL BUSINESS CARD
+                            </p>
+
+                            <h2>Миний овог, нэр</h2>
+
+                            <div class="card-divider"></div>
+
+                            <p class="card-role">
+                                Их сургуулийн оюутан
+                            </p>
+
+                            <div class="card-contact">
+                                <p>☎ 0000 0000</p>
+                                <p>✉ example@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="card-corner">❦</div>
+
+                    </div>
+
+                    <!-- Ар тал -->
+                    <div class="card-face card-back">
+
+                        <div class="card-back-content">
+
+                            <p class="card-small-title">
+                                FAMILY HISTORY
+                            </p>
+
+                            <h2>Миний гэр бүлийн түүх</h2>
+
+                            <div class="card-divider"></div>
+
+                            <!-- QR кодыг дараа нь нэмнэ -->
+                            <div class="qr-placeholder">
+                                <span>QR</span>
+                                <p>QR код энд байрлана</p>
+                            </div>
+
+                            <p class="qr-description">
+                                QR кодыг уншуулж манай
+                                гэр бүлийн түүхтэй танилцаарай.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="flip-button" id="flipButton" type="button">
+                Нэрийн хуудсыг эргүүлэх ↻
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Миний гэр бүлийн түүх.
+            Бүх эрх хуулиар хамгаалагдсан.
+        </p>
+    </footer>
+
+</body>
+</html>

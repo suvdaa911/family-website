@@ -1,0 +1,1351 @@
+/* Үндсэн тохиргоо */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rose: #C58C8C;
+    --cream: #F7F0E8;
+    --beige: #D6C1A5;
+    --mocha: #8A6B5C;
+    --brown: #3E2F2A;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--brown);
+    overflow-x: hidden;
+}
+
+/* =========================
+   ДЭЭД ЦЭС
+========================= */
+
+.navbar {
+    background: linear-gradient(
+        110deg,
+        #79584d,
+        #8A6B5C,
+        #654a41
+    );
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 7%;
+    box-shadow: 0 3px 15px rgba(62, 47, 42, 0.15);
+}
+
+.logo {
+    color: var(--cream);
+    font-size: 26px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 17px;
+    padding-bottom: 7px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--cream);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* =========================
+   НҮҮР ХУУДАС
+========================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        125deg,
+        #F7F0E8 0%,
+        #f9eee6 45%,
+        #ead4c5 100%
+    );
+}
+
+/* Зүүн талын цэцэг, навчны чимэглэл */
+
+.hero::before {
+    content: "❦";
+    position: absolute;
+    left: -35px;
+    bottom: -75px;
+    font-size: 310px;
+    color: rgba(197, 140, 140, 0.17);
+    transform: rotate(-20deg);
+    pointer-events: none;
+}
+
+/* Дээд талын зөөлөн чимэглэл */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: rgba(197, 140, 140, 0.10);
+    top: -220px;
+    left: 18%;
+    pointer-events: none;
+}
+
+.hero-content {
+    width: 48%;
+    padding: 65px 4% 65px 10%;
+    position: relative;
+    z-index: 2;
+}
+
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--mocha);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.subtitle::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 2px;
+    background: var(--rose);
+    margin-top: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(45px, 5vw, 75px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+    font-weight: normal;
+    letter-spacing: -1px;
+}
+
+.hero-description {
+    font-size: 20px;
+    line-height: 1.65;
+    margin-bottom: 35px;
+    max-width: 450px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: linear-gradient(
+        135deg,
+        #C58C8C,
+        #b57777
+    );
+    color: white;
+    padding: 17px 35px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: 0 7px 20px rgba(197, 140, 140, 0.25);
+    transition: all 0.3s;
+}
+
+.hero-btn:hover {
+    background: var(--mocha);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(62, 47, 42, 0.2);
+}
+
+/* =========================
+   ГЭР БҮЛИЙН ЗУРАГ
+========================= */
+
+.hero-image {
+    width: 52%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Зургийн ирмэгийг уусгах */
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to right,
+        #f5e9df 0%,
+        rgba(245, 233, 223, 0.75) 5%,
+        rgba(245, 233, 223, 0) 25%
+    );
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s;
+}
+
+.hero-image:hover img {
+    transform: scale(1.04);
+}
+
+/* =========================
+   ҮНДСЭН 4 КАРТ
+========================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    padding: 45px 6%;
+
+    background: linear-gradient(
+        180deg,
+        #ead8c6,
+        #F7F0E8
+    );
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 35px 20px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--brown);
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(62, 47, 42, 0.07);
+    transition: all 0.35s;
+}
+
+/* Картын булангийн чимэглэл */
+
+.feature-card::before {
+    content: "❧";
+    position: absolute;
+    left: 10px;
+    bottom: -18px;
+    font-size: 85px;
+    color: rgba(197, 140, 140, 0.16);
+    transform: rotate(-25deg);
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: #fffaf6;
+    box-shadow: 0 15px 30px rgba(62, 47, 42, 0.15);
+    border-color: var(--rose);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(
+        135deg,
+        #C58C8C,
+        #b47a7a
+    );
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 0 auto 22px;
+    box-shadow: 0 5px 15px rgba(197, 140, 140, 0.2);
+}
+
+.feature-card h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+    font-weight: normal;
+}
+
+.feature-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================
+   ИШЛЭЛ
+========================= */
+
+.quote {
+    text-align: center;
+    padding: 70px 20px;
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #f3e4da,
+        #F7F0E8
+    );
+}
+
+.quote::before {
+    content: "“";
+    display: block;
+    font-size: 85px;
+    line-height: 0.7;
+    color: var(--rose);
+    opacity: 0.8;
+}
+
+.quote p {
+    font-size: 24px;
+    font-style: italic;
+    color: var(--mocha);
+    line-height: 1.7;
+}
+
+.quote::after {
+    content: "❧";
+    display: block;
+    font-size: 38px;
+    color: var(--rose);
+    margin-top: 15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: linear-gradient(
+        110deg,
+        #3E2F2A,
+        #705248,
+        #3E2F2A
+    );
+    color: var(--cream);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero-content {
+        padding-left: 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        padding: 55px 8%;
+    }
+
+    .subtitle::after {
+        margin: 15px auto 0;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .hero-image::after {
+        background: linear-gradient(
+            to bottom,
+            #f5e9df 0%,
+            transparent 25%
+        );
+    }
+
+    .features {
+        padding: 30px 5%;
+    }
+
+    .quote p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 30px 15px;
+    }
+
+    .quote {
+        padding: 55px 20px;
+    }
+
+    .quote p {
+        font-size: 18px;
+    }
+}
+/* =========================
+   УДМЫН МОДНЫ ХУУДАС
+========================= */
+
+.tree-page {
+    background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #f3e3d9,
+        #F7F0E8
+    );
+    min-height: 100vh;
+}
+
+/* Хуудасны гарчиг */
+.tree-intro {
+    text-align: center;
+    padding: 65px 20px 40px;
+}
+
+.tree-intro .subtitle::after {
+    margin: 15px auto 0;
+}
+
+.tree-intro h1 {
+    font-size: 48px;
+    font-weight: normal;
+    color: #3E2F2A;
+    margin-bottom: 20px;
+}
+
+.tree-intro > p:last-child {
+    font-size: 18px;
+    color: #8A6B5C;
+    line-height: 1.6;
+}
+
+/* Удмын модны үндсэн хэсэг */
+.family-tree {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 25px 70px;
+}
+
+/* Үе тус бүр */
+.generation {
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.generation h2 {
+    display: inline-block;
+    background: #C58C8C;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+/* Өвөө, эмээ нар */
+.grandparents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.family-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Аав, ээж */
+.parents {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+}
+
+/* Өөрийн үе */
+.my-generation {
+    display: flex;
+    justify-content: center;
+}
+
+/* Хүний карт */
+.person-card {
+    width: 220px;
+    min-height: 270px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #D6C1A5;
+    border-radius: 18px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(62, 47, 42, 0.08);
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.person-card:hover {
+    transform: translateY(-8px);
+    border-color: #C58C8C;
+    box-shadow: 0 15px 30px rgba(62, 47, 42, 0.15);
+}
+
+/* Зураг эсвэл дүрс */
+.person-avatar {
+    width: 105px;
+    height: 105px;
+    background: #f0dcd8;
+    border: 3px solid #C58C8C;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    overflow: hidden;
+}
+
+.person-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Нэр, мэдээлэл */
+.person-card h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.person-card p {
+    font-size: 16px;
+    color: #8A6B5C;
+    margin-bottom: 12px;
+}
+
+.person-card span {
+    font-size: 14px;
+    color: #8A6B5C;
+}
+
+/* Өөрийн карт */
+.my-card {
+    background: #fff7f2;
+    border: 2px solid #C58C8C;
+}
+
+/* Үе хоорондын холбоос */
+.generation:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 55px;
+    background: #C58C8C;
+    margin: 20px auto 0;
+}
+
+/* Доод ишлэл */
+.tree-message {
+    text-align: center;
+    padding: 45px 20px 65px;
+}
+
+.tree-message p {
+    font-size: 22px;
+    font-style: italic;
+    color: #8A6B5C;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .grandparents {
+        gap: 20px;
+    }
+
+    .family-group {
+        gap: 12px;
+    }
+
+    .person-card {
+        width: 190px;
+    }
+
+    .parents {
+        gap: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tree-intro h1 {
+        font-size: 36px;
+    }
+
+    .grandparents {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .family-group {
+        gap: 15px;
+    }
+
+    .parents {
+        gap: 20px;
+    }
+
+    .person-card {
+        width: 165px;
+        min-height: 250px;
+        padding: 20px 10px;
+    }
+
+    .person-avatar {
+        width: 85px;
+        height: 85px;
+        font-size: 45px;
+    }
+
+    .person-card h3 {
+        font-size: 17px;
+    }
+
+    .person-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .person-card {
+        width: 140px;
+    }
+
+    .family-group {
+        gap: 10px;
+    }
+
+    .person-avatar {
+        width: 75px;
+        height: 75px;
+    }
+}
+/* =========================
+   ГЭР БҮЛИЙН ТҮҮХ ХУУДАС
+========================= */
+
+.history-page {
+    background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #f3e3d9,
+        #F7F0E8
+    );
+    min-height: 100vh;
+}
+
+/* Хуудасны танилцуулга */
+
+.history-intro {
+    text-align: center;
+    padding: 75px 20px 65px;
+    position: relative;
+}
+
+.history-intro .subtitle::after {
+    margin: 15px auto 0;
+}
+
+.history-intro h1 {
+    font-size: 48px;
+    font-weight: normal;
+    color: #3E2F2A;
+    margin-bottom: 25px;
+}
+
+.history-intro > p:last-child {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #8A6B5C;
+}
+
+/* =========================
+   ҮЕ ТУС БҮРИЙН ХЭСЭГ
+========================= */
+
+.history-section {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 30px 80px;
+}
+
+.history-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.history-heading span {
+    display: inline-block;
+    font-size: 16px;
+    color: #C58C8C;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.history-heading h2 {
+    font-size: 34px;
+    font-weight: normal;
+    color: #3E2F2A;
+    margin-bottom: 15px;
+}
+
+.history-heading p {
+    font-size: 17px;
+    color: #8A6B5C;
+}
+
+/* =========================
+   НАМТРЫН КАРТУУД
+========================= */
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.history-card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #D6C1A5;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(62, 47, 42, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Картын булангийн чимэглэл */
+
+.history-card::before {
+    content: "❧";
+    position: absolute;
+    bottom: -25px;
+    right: 5px;
+    font-size: 100px;
+    color: rgba(197, 140, 140, 0.12);
+    pointer-events: none;
+}
+
+.history-card:hover {
+    transform: translateY(-8px);
+    border-color: #C58C8C;
+    box-shadow: 0 15px 35px rgba(62, 47, 42, 0.15);
+}
+
+/* Хүний зураг эсвэл дүрс */
+
+.history-avatar {
+    width: 110px;
+    height: 110px;
+    background: #f0dcd8;
+    border: 3px solid #C58C8C;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+    margin: 0 auto 25px;
+    overflow: hidden;
+}
+
+.history-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Нэр, намтар */
+
+.history-card h3 {
+    font-size: 23px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #3E2F2A;
+}
+
+.history-name {
+    color: #C58C8C !important;
+    font-size: 17px !important;
+    margin-bottom: 20px !important;
+    font-weight: bold;
+}
+
+.history-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #8A6B5C;
+}
+
+/* =========================
+   II ҮЕ — ААВ, ЭЭЖ
+========================= */
+
+.parents-history {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* =========================
+   III ҮЕ — МИНИЙ ТҮҮХ
+========================= */
+
+.my-history {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.my-history .history-card {
+    border: 2px solid #C58C8C;
+    background: #fff7f2;
+}
+
+/* =========================
+   ГЭР БҮЛИЙН ДУРСАМЖ
+========================= */
+
+.family-memory {
+    text-align: center;
+    padding: 70px 25px;
+    background: linear-gradient(
+        135deg,
+        #ead8c6,
+        #F7F0E8
+    );
+}
+
+.family-memory h2 {
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 25px;
+    color: #3E2F2A;
+}
+
+.family-memory > p {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #8A6B5C;
+}
+
+.memory-image {
+    max-width: 850px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(62, 47, 42, 0.2);
+}
+
+.memory-image img {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* =========================
+   ТӨГСГӨЛИЙН ИШЛЭЛ
+========================= */
+
+.history-quote {
+    text-align: center;
+    padding: 70px 20px;
+    background: #F7F0E8;
+}
+
+.history-quote::before {
+    content: "❦";
+    display: block;
+    font-size: 45px;
+    color: #C58C8C;
+    margin-bottom: 20px;
+}
+
+.history-quote p {
+    font-size: 23px;
+    font-style: italic;
+    color: #8A6B5C;
+    line-height: 1.7;
+}
+
+/* =========================
+   УТАС, ТАБЛЕТЫН ЗАГВАР
+========================= */
+
+@media (max-width: 1000px) {
+
+    .history-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .my-history {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .history-intro {
+        padding: 55px 20px;
+    }
+
+    .history-intro h1 {
+        font-size: 36px;
+    }
+
+    .history-heading h2 {
+        font-size: 28px;
+    }
+
+    .history-section {
+        padding: 25px 20px 55px;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .history-card {
+        padding: 30px 20px;
+    }
+
+    .family-memory h2 {
+        font-size: 30px;
+    }
+
+    .family-memory > p {
+        font-size: 16px;
+    }
+
+    .history-quote p {
+        font-size: 19px;
+    }
+}
+/* =========================
+   НЭРИЙН ХУУДАС
+========================= */
+
+.card-page {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #f0ddd2,
+        #F7F0E8
+    );
+}
+
+/* Хуудасны гарчиг */
+.card-intro {
+    text-align: center;
+    padding: 65px 20px 35px;
+}
+
+.card-intro .subtitle::after {
+    margin: 15px auto 0;
+}
+
+.card-intro h1 {
+    font-size: 46px;
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.card-intro > p:last-child {
+    font-size: 18px;
+    color: #8A6B5C;
+    line-height: 1.6;
+}
+
+/* Нэрийн хуудасны байрлал */
+.business-card-section {
+    text-align: center;
+    padding: 25px 20px 90px;
+}
+
+.card-instruction {
+    font-size: 16px;
+    color: #8A6B5C;
+    margin-bottom: 35px;
+}
+
+.card-container {
+    width: min(100%, 520px);
+    aspect-ratio: 1.75;
+    margin: 0 auto 35px;
+    perspective: 1200px;
+}
+
+/* Эргэдэг карт */
+.business-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.business-card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Хоёр талын ерөнхий загвар */
+.card-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 18px 45px rgba(62, 47, 42, 0.2);
+}
+
+/* =========================
+   НҮҮР ТАЛ
+========================= */
+
+.card-front {
+    background: linear-gradient(
+        135deg,
+        #F7F0E8,
+        #ead4c6,
+        #D6C1A5
+    );
+    border: 2px solid #C58C8C;
+    color: #3E2F2A;
+}
+
+/* Дотор хүрээ */
+.card-front::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(138, 107, 92, 0.45);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.card-decoration {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font-size: 35px;
+    color: #C58C8C;
+}
+
+.card-corner {
+    position: absolute;
+    bottom: -25px;
+    right: 5px;
+    font-size: 110px;
+    color: rgba(197, 140, 140, 0.35);
+}
+
+.card-front-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.card-small-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.card-front h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.card-divider {
+    width: 65px;
+    height: 2px;
+    background: #C58C8C;
+    margin: 0 auto 18px;
+}
+
+.card-role {
+    font-size: 17px;
+    margin-bottom: 25px;
+    color: #8A6B5C;
+}
+
+.card-contact p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================
+   АР ТАЛ
+========================= */
+
+.card-back {
+    background: linear-gradient(
+        135deg,
+        #3E2F2A,
+        #705248,
+        #3E2F2A
+    );
+    color: #F7F0E8;
+    transform: rotateY(180deg);
+    border: 2px solid #D6C1A5;
+}
+
+/* Ар талын хүрээ */
+.card-back::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(214, 193, 165, 0.5);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.card-back-content {
+    position: relative;
+    z-index: 1;
+    padding: 15px;
+}
+
+.card-back h2 {
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.card-back .card-small-title {
+    margin-bottom: 10px;
+}
+
+/* QR кодын түр байрлал */
+.qr-placeholder {
+    width: 105px;
+    height: 105px;
+    background: #F7F0E8;
+    color: #3E2F2A;
+    margin: 0 auto 12px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-placeholder span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.qr-placeholder p {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.qr-description {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =========================
+   ЭРГҮҮЛЭХ ТОВЧ
+========================= */
+
+.flip-button {
+    background: #C58C8C;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flip-button:hover {
+    background: #8A6B5C;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   УТАСНЫ ДЭЛГЭЦ
+========================= */
+
+@media (max-width: 600px) {
+
+    .card-intro h1 {
+        font-size: 34px;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+
+    .card-front h2 {
+        font-size: clamp(19px, 5vw, 32px);
+    }
+
+    .card-back h2 {
+        font-size: clamp(17px, 4.5vw, 26px);
+    }
+
+    .card-small-title {
+        font-size: 9px;
+        margin-bottom: 10px;
+    }
+
+    .card-role {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .card-contact p {
+        font-size: 12px;
+    }
+
+    .card-front-content {
+        padding: 10px;
+    }
+
+    .card-back-content {
+        padding: 8px;
+    }
+
+    .qr-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+
+    .qr-placeholder span {
+        font-size: 22px;
+    }
+
+    .qr-description {
+        font-size: 10px;
+    }
+}
